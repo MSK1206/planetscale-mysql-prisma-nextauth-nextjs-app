@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import { Zen_Antique } from 'next/font/google';
+import ProviderWrap from '@/app/contexts';
+import Header from '@/app/components/base/Header';
+import Footer from './components/base/Footer';
 import './globals.css';
 
 const inter = Zen_Antique({
@@ -10,7 +13,7 @@ const inter = Zen_Antique({
 });
 
 export const metadata: Metadata = {
-  title: 'Home | Sample',
+  title: 'Home | msk.dev',
   description: 'planetscale-mysql-prisma-nextauth-nextjs-app',
 };
 
@@ -21,7 +24,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ProviderWrap>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </ProviderWrap>
+      </body>
     </html>
   );
 }

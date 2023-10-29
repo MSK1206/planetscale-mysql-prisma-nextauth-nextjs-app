@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import Loading from './loading';
 
 export const metadata: Metadata = {
-  title: 'Dashboard | PlanetScale + Prisma with NextAuth App',
+  title: 'Dashboard | msk.dev',
   description: 'planetscale-mysql-prisma-nextauth-nextjs-app',
 };
 

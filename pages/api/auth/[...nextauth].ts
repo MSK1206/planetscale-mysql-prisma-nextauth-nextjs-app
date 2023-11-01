@@ -1,10 +1,11 @@
+import NextAuth from 'next-auth';
 import type { NextAuthOptions } from 'next-auth';
 import { PrismaAdapter } from '@auth/prisma-adapter';
 import prisma from '@/lib/prisma';
 import GoogleProvider from 'next-auth/providers/google';
 import GitHubProvider from 'next-auth/providers/github';
 
-export const authConfig: NextAuthOptions = {
+const authOptions: NextAuthOptions = {
   session: { strategy: 'jwt' },
   providers: [
     GoogleProvider({
@@ -16,7 +17,7 @@ export const authConfig: NextAuthOptions = {
       clientSecret: process.env.GITHUB_SECRET as string,
     }),
   ],
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.NEXTAUTH_SECRET as string,
   adapter: PrismaAdapter(prisma),
   callbacks: {
     async redirect({ url, baseUrl }) {
@@ -30,3 +31,5 @@ export const authConfig: NextAuthOptions = {
     signOut: '/',
   },
 };
+
+export default NextAuth(authOptions);

@@ -17,9 +17,9 @@ export default function Login() {
               <button
                 type="button"
                 onClick={() => signOut()}
-                className="btn btn-base-100 border border-slate-400 rounded-lg p-1 my-5 w-[250px]"
+                className="btn btn-base-100 border border-slate-400 rounded-lg p-1 my-5 w-[250px] hover:text-transparent"
               >
-                <span className="bg-clip-text hover:text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+                <span className="bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500">
                   Sign out
                 </span>
               </button>

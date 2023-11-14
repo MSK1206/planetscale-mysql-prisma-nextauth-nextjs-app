@@ -1,3 +1,4 @@
+
 <a href="https://nextjs-nextauth-app.vercel.app/">
   <h1 align="center">planetscale-mysql-prisma-nextauth-nextjs-app</h1>
 </a>

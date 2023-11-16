@@ -4,6 +4,8 @@ import ProviderWrap from '@/app/contexts';
 import Header from '@/app/components/base/Header';
 import Footer from './components/base/Footer';
 import './globals.css';
+import { Suspense } from 'react';
+import Loading from './loading';
 
 const inter = Zen_Antique({
   weight: '400',
@@ -27,7 +29,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ProviderWrap>
           <Header />
-          <main>{children}</main>
+          <Suspense fallback={<Loading />}>{children}</Suspense>
           <Footer />
         </ProviderWrap>
       </body>
